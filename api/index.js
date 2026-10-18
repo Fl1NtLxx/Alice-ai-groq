@@ -60,6 +60,7 @@ export default async function handler(req, res) {
     });
 
     const groqData = await groqRes.json();
+    console.error("GROQ RAW RESPONSE:", JSON.stringify(groqData));
     let replyText = "Извините, я не смогла обработать ответ.";
     
     if (groqData.choices && groqData.choices[0].message) {
